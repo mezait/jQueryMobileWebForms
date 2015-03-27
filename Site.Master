@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="jQueryMobile.Site" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery and Web Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href='<%= ResolveClientUrl("~/content/jquery.mobile-1.4.5.min.css") %>' />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="page" runat="server">
+    <div data-role="page" id="master">
+    </asp:ContentPlaceHolder>
+        <div data-role="header">
+            <h1>
+                jQuery and Web Forms</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="Cart.aspx">Cart</a></li>
+                </ul>
+            </div> <!-- /navbar -->
+        </div> <!-- /header -->
+        <div role="main" class="ui-content">
+            <asp:Label ID="lblCartSummary" runat="server" CssClass="cart-summary" />
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div> <!-- /content -->
+        <div data-role="footer">
+            <h4>
+                Page Footer</h4>
+        </div> <!-- /footer -->
+    </div> <!-- /page -->
+    <script src='<%= ResolveClientUrl("~/scripts/jquery-2.1.3.min.js") %>'></script>
+    <script src='<%= ResolveClientUrl("~/scripts/jquery.mobile-1.4.5.min.js") %>'></script>
+    <script src='<%= ResolveClientUrl("~/scripts/jquery.mobile-custom.js") %>'></script>
+</body>
+</html>
